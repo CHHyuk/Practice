@@ -75,6 +75,113 @@ const value = !((true && false) || (true && false) || !false);
 
 비교 연산자
 
+=== : 두 값이 일치하는지 확인, 일치하면 true 아니면 false
 
+const a = 1;
+const b = 1;
+const equals = a === b;
+console.log(equals); // true 출력
 
+== : === 와 같지만 타입검사까진 하지 않음, ex) == 는 숫자 1과 문자 '1'이 동일한 값으로 간주
+
+const a = 1;
+const b = '1';
+const equals = a == b;
+console.log(equals); // true 출력
+
+const a = 0;
+const b = false;
+const equals = a == b;
+console.log(equals); // true 출력
+
+const a = null;
+const b = undefined;
+const equals = a == b;
+console.log(equals); // true 출력
+
+!== : 두 값이 일치하지 않는지 확인
+
+const value = 'a' !== 'b'; // 문자 'a' 와 'b' 가 다르므로 일치하지 않음 > true
+
+!= : !==와 같지만 타입검사까진 하지 않음
+
+console.log(1 != '1'); // 타입이 다르지만 같다고 인식되므로 false
+console.log(1 !== '1');  // 타입이 다르므로 true
+
+크고 작음
+
+> , < , >= , <= 각각 초과 미만 이상 이하
+
+-------------------------
+
+문자열 붙이기
+
+const a = '안녕';
+const b = '하세요';
+console.log(a + b); // 안녕하세요 출력
+
+------------------------
+
+if문
+
+기본 골조
+
+if (조건) {
+	코드;
+} 
+// 코드는 조건이 참일 경우 실행됨
+
+const a = 1;
+if (a + 1 === 2) {
+	console.log('a + 1 이 2 입니다');
+}
+// a가 1이고 a + 1 = 2 가 참이므로 'a + 1 이 2 입니다' 가 출력됨
+
+const a = 0;
+if (a + 1 === 2) {
+	console.log('a + 1 이 2 입니다');
+}
+// a가 0이라 if문의 조건이 성립하지 않으므로 아무것도 출력되지 않음
+
+{ } : 코드블록, 다른 블록 범위에서는 똑같은 이름으로 선언 가능
+
+const a = 1;
+if(true) {
+	const a = 2;
+	console.log('if문 안의 a 값은' + a);
+}
+console.log('if문 밖의 a 값은' + a);
+// 
+if문 안의 a 값은 2
+if문 밖의 a 값은 1 출력
+
+--------------------------
+
+if-else 문
+
+기본 골조
+if (조건 1) {
+	코드 1;
+} else if (조건 2) {
+	코드 2;
+} else {
+	코드 3;
+}
+// 조건 1이 성립하면 코드1이 실행, 성립하지 않는다면 조건2를 확인,
+조건 2가 성립하면 코드 2 실행, 성립하지 않는다면 코드 3 실행
+
+const a = 10;
+if (a === 5) {
+	console.log('5입니다!');
+} else if (a === 10) {
+	console.log('10입니다!');
+} else {
+	console.log('5도 아니고 10도 아닙니다.');
+}
+// a가 10이고 if문에 조건1(a === 5)이 성립하지 않으므로 조건2(a === 10)를 확인
+조건2가 성립하므로 코드 2(10입니다! 출력) 실행
+
+-----------------------------
+
+switch/case문
 
