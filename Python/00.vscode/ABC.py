@@ -1,11 +1,7 @@
-def check_and_clear(box):
-    if "불량품" in box.keys():
-         box.clear()
-         print("불량품이 있으면 box를 clear합니다.")
-    else:
-         print(box)
-box = {"불량품" : 10}
-check_and_clear(box)
+numbers = [(1, 2), (10, 0)]
 
-box = {"정상품": 10}
-check_and_clear(box)
+for a, b in numbers:
+    if b == 0:
+        print("0으로 나눌 수는 없습니다.")
+    continue
+        print("{}를 {}로 나누면 {}".format(a, b, a/b))
