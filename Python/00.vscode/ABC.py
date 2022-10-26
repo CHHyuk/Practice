@@ -1,3 +1,12 @@
-a = '5+4*20/2'
-b = eval(a)
-print(b)
+if value in my_list:
+    return my_list.index(value)
+else: 
+    return None
+
+if value in my_list:
+        return 
+my_list.index(value)
+
+    else:
+        return 
+None
