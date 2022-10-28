@@ -1,15 +1,8 @@
 import all_unit
 import enemy
-
+from enum import IntEnum
 
 class Pokemon(all_unit.all_unit):
-    def __init__(self):
-        self.name = ''
-        self.hp = 0
-        self.exp = 0
-        self.lv = 1
-        self.normal_dmg = 0
-        self.skill_dmg = 0
 
     def hospital(self):
         print(self.name, '이(가) 회복 되었습니다.')
@@ -41,7 +34,6 @@ class Pokemon(all_unit.all_unit):
     
 class 피카츄(Pokemon):
     def __init__(self):
-        super().__init__()
         self.name = '피카츄'
         self.hp = 30
         self.normal_dmg = 3
@@ -86,7 +78,6 @@ class 피카츄(Pokemon):
 
 class 파이리(Pokemon):
     def __init__(self):
-        super().__init__()
         self.name = '파이리'
         self.hp = 25
         self.normal_dmg = 8
@@ -131,7 +122,6 @@ class 파이리(Pokemon):
 
 class 꼬부기(Pokemon):
     def __init__(self):
-        super().__init__()
         self.name = '꼬부기'
         self.hp = 30
         self.normal_dmg = 5
@@ -176,7 +166,6 @@ class 꼬부기(Pokemon):
 
 class 이상해씨(Pokemon):
     def __init__(self):
-        super().__init__()
         self.name = '이상해씨'
         self.hp = 40
         self.normal_dmg = 5
@@ -263,9 +252,10 @@ def start():
 
 start()
 
-"""
-def fight():
-    slime = enemy.slime
-    dragon = enemy.dragon
+class turn(IntEnum):
+    My_turn = 1
+    enemy_turn = 2
+    
+def fight(self):
     while True:
-"""
+        if 

@@ -1,23 +1,43 @@
 import all_unit
 
-class slime(all_unit.all_unit):
-    hp = 10
-    normal_dmg = 3
+class 하급_적(all_unit.all_unit):
+    def __init__(self):
+        self.hp = 20
+        self.normal_dmg = 2
+        self.skill_dmg = 5
 
     def normal_attack(self, enemy_hp):
-        print("슬라임의 공격!")
-        super().normal_attack()
-
-
-class dragon(all_unit.all_unit):
-    hp = 1000
-    normal_dmg = 50
-    skill_dmg = 300
-
-    def normal_attack(self, enemy_hp):
-        print("드래곤의 공격!")
+        print("하급 기본 공격!")
         super().normal_attack()
 
     def skill_attack(self, enemy_hp):
-        print("드래곤의 강력한 스킬공격!")
+        print("하급 스킬 공격!")
+        super().skill_attack()
+
+class 중급_적(all_unit.all_unit):
+    def __init__(self):
+        self.hp = 200
+        self.normal_dmg = 15
+        self.skill_dmg = 50
+
+    def normal_attack(self, enemy_hp):
+        print("중급 기본 공격!")
         super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print("중급 스킬 공격!")
+        super().skill_attack()
+ 
+class 상급_적(all_unit.all_unit):
+    def __init__(self):
+        self.hp = 1000
+        self.normal_dmg = 30
+        self.skill_dmg = 200
+
+    def normal_attack(self, enemy_hp):
+        print("상급 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print("상급 스킬 공격!")
+        super().skill_attack()
