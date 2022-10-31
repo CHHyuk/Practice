@@ -1,6 +1,5 @@
 import all_unit
 import enemy
-from enum import IntEnum
 
 class Pokemon(all_unit.all_unit):
 
@@ -76,6 +75,14 @@ class 피카츄(Pokemon):
         else:
             pass
 
+    def normal_attack(self, enemy_hp):
+        print(self.name, ", 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print(self.name,", 스킬 공격!")
+        super().skill_attack()
+
 class 파이리(Pokemon):
     def __init__(self):
         self.name = '파이리'
@@ -119,6 +126,15 @@ class 파이리(Pokemon):
             print(self.name, '(으)로 진화 하였습니다. 축하합니다.')
         else:
             pass
+
+    def normal_attack(self, enemy_hp):
+        print(self.name, ", 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print(self.name,", 스킬 공격!")
+        super().skill_attack()
+
 
 class 꼬부기(Pokemon):
     def __init__(self):
@@ -164,6 +180,15 @@ class 꼬부기(Pokemon):
         else:
             pass
 
+    def normal_attack(self, enemy_hp):
+        print(self.name, ", 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print(self.name,", 스킬 공격!")
+        super().skill_attack()
+
+
 class 이상해씨(Pokemon):
     def __init__(self):
         self.name = '이상해씨'
@@ -207,6 +232,15 @@ class 이상해씨(Pokemon):
             print(self.name, '(으)로 진화 하였습니다. 축하합니다.')
         else:
             pass
+
+    def normal_attack(self, enemy_hp):
+        print(self.name, ", 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print(self.name,", 스킬 공격!")
+        super().skill_attack()
+
 
 class Menu():
     def __init__(self, M):
@@ -252,10 +286,3 @@ def start():
 
 start()
 
-class turn(IntEnum):
-    My_turn = 1
-    enemy_turn = 2
-    
-def fight(self):
-    while True:
-        if 
