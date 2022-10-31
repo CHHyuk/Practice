@@ -1,7 +1,66 @@
-import all_unit
-import enemy
+from re import A, M
+from random import choice
+from time import sleep
 
-class Pokemon(all_unit.all_unit):
+class all_unit():
+    def __init__(self):
+        self.name = ''
+        self.hp = 0
+        self.exp = 0
+        self.lv = 1
+        self.normal_dmg = 0
+        self.skill_dmg = 0
+    
+    def normal_attack(self, enemy_hp):
+        return enemy_hp - self.normal_dmg
+    
+    def skill_attack(self, enemy_hp):
+        return enemy_hp - self.skill_dmg
+
+class 하급_적(all_unit):
+    def __init__(self):
+        self.hp = 20
+        self.normal_dmg = 2
+        self.skill_dmg = 5
+
+    def normal_attack(self, enemy_hp):
+        print(self.name, ", 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print(self.name,", 스킬 공격!")
+        super().skill_attack()
+
+class 중급_적(all_unit):
+    def __init__(self):
+        self.hp = 200
+        self.normal_dmg = 15
+        self.skill_dmg = 50
+
+    def normal_attack(self, enemy_hp):
+        print(self.name, ", 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print(self.name,", 스킬 공격!")
+        super().skill_attack()
+ 
+class 상급_적(all_unit):
+    def __init__(self):
+        self.hp = 1000
+        self.normal_dmg = 30
+        self.skill_dmg = 200
+
+    def normal_attack(self, enemy_hp):
+        print(self.name, ", 기본 공격!")
+        super().normal_attack()
+
+    def skill_attack(self, enemy_hp):
+        print(self.name,", 스킬 공격!")
+        super().skill_attack()
+
+
+class Pokemon(all_unit):
 
     def hospital(self):
         print(self.name, '이(가) 회복 되었습니다.')
@@ -33,6 +92,7 @@ class Pokemon(all_unit.all_unit):
     
 class 피카츄(Pokemon):
     def __init__(self):
+        super().__init__()
         self.name = '피카츄'
         self.hp = 30
         self.normal_dmg = 3
@@ -85,6 +145,7 @@ class 피카츄(Pokemon):
 
 class 파이리(Pokemon):
     def __init__(self):
+        super().__init__()
         self.name = '파이리'
         self.hp = 25
         self.normal_dmg = 8
@@ -138,6 +199,7 @@ class 파이리(Pokemon):
 
 class 꼬부기(Pokemon):
     def __init__(self):
+        super().__init__()
         self.name = '꼬부기'
         self.hp = 30
         self.normal_dmg = 5
@@ -191,11 +253,12 @@ class 꼬부기(Pokemon):
 
 class 이상해씨(Pokemon):
     def __init__(self):
+        super().__init__()
         self.name = '이상해씨'
         self.hp = 40
         self.normal_dmg = 5
         self.skill_dmg = 15
-    
+
     def hospital(self):
         self.hp += 10
         super().hospital()
@@ -257,12 +320,14 @@ class Menu():
             elif menu == 3:
                 self.mon.training()
             elif menu == 4:
-                go = input('1. 슬라임 평원, 2. 드래곤 레어 3. 돌아가기 > ')
+                go = input('1. 하급 적, 2. 중급 적 3. 상급 적 4. 돌아가기 > ')
                 if go == '1':
-                    fight()
+                    fightobject('1')
                 elif go == '2':
-                    fight()
+                    fightobject('2')
                 elif go == '3':
+                    fightobject('3')
+                elif go == '4':
                     continue
             elif menu == 5:
                 flag = False
@@ -286,3 +351,68 @@ def start():
 
 start()
 
+def fightobject(A):
+    Player = M
+    Monster = A
+    if A == '1':
+        A = 하급_적
+    elif A == '2':
+        A = 중급_적
+    elif A == '3':
+        A == 상급_적
+    return Player,Monster
+
+def showinfo(Player, Monster):
+    print("------ 전투 시작 ------")
+    print("{}의 체력 : {}".format(Player.name, Player.hp))
+    print("{}의 체력 : {}".format(Monster.name,Monster.hp))
+
+def playerturn(Player, Monster):
+    print("------ 플레이어의 턴 ------")
+    command = input('1. 기본공격 2. 스킬공격')
+    if command == '1':
+        Player.normal_attack(Monster.hp)
+    elif command == '2':
+        Player.skill_attack(Monster.hp)
+    return Monster
+
+def check_mdead(Monster):
+    if Monster.hp <= 0:
+        return True
+    else:
+        return False
+
+def monsterturn(Player, Monster):
+    print('------ 적의 턴 ------')
+    sleep(3)
+    for key, value in Monster.item():
+        commands = ['기본공격', '스킬공격']
+        command = choice(commands)
+        if command == '기본공격':
+            value.normal_attack(Player)
+        elif command == '스킬공격':
+            value.skill_attack(Player)
+    return Player
+        
+def check_pdead(player):
+    if player.hp <= 0:
+        return True
+    else:
+        return False
+
+Player, Monster = fightobject()
+
+while True:
+    showinfo(Player, Monster)
+    Monster = playerturn(Player, Monster)
+    sleep(1)
+    Monster, ismdead = check_mdead(Monster)
+    if ismdead:
+        print('승리')
+        break
+    Player = monsterturn(Player, Monster)
+    ispdead = check_pdead(Player)
+    if ispdead:
+        print("패배")
+        break
+    sleep(1)
