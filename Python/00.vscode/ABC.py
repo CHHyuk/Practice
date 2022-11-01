@@ -1,12 +1,7 @@
-if value in my_list:
-    return my_list.index(value)
-else: 
-    return None
+filepath = 'C:/git/Practice/Python/00.vscode/Pokemon.txt'
+with open(filepath,'r',encoding='UTF-8') as f: 
+    data = f.readlines()
 
-if value in my_list:
-        return 
-my_list.index(value)
+P = data[0].strip().split()
 
-    else:
-        return 
-None
+print(P)

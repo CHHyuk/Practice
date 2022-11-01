@@ -1,6 +1,6 @@
-from re import A, M
+
 from random import choice
-from time import sleep
+from re import M
 
 class all_unit():
     def __init__(self):
@@ -359,7 +359,7 @@ def fightobject(A):
     elif A == '2':
         A = 중급_적
     elif A == '3':
-        A == 상급_적
+        A = 상급_적
     return Player,Monster
 
 def showinfo(Player, Monster):
@@ -384,7 +384,6 @@ def check_mdead(Monster):
 
 def monsterturn(Player, Monster):
     print('------ 적의 턴 ------')
-    sleep(3)
     for key, value in Monster.item():
         commands = ['기본공격', '스킬공격']
         command = choice(commands)
@@ -405,7 +404,6 @@ Player, Monster = fightobject()
 while True:
     showinfo(Player, Monster)
     Monster = playerturn(Player, Monster)
-    sleep(1)
     Monster, ismdead = check_mdead(Monster)
     if ismdead:
         print('승리')
@@ -415,4 +413,3 @@ while True:
     if ispdead:
         print("패배")
         break
-    sleep(1)
