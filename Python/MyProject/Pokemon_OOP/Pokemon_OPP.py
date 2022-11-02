@@ -35,8 +35,6 @@ class wildenemy():
         self.hp = int(E_Mon[2])
         self.dmg = int(E_Mon[3])
         self.skill_name = E_Mon[4]
-        self.exp = 10
-        self.money = 10
 
     def attack(self, enemy_hp):
         return enemy_hp - self.dmg
@@ -139,7 +137,7 @@ class fight():
             if enemy.hp <= 0:
                 break
 
-        print("전투 종료")              
+        print("전투 종료")
 
 
 """
