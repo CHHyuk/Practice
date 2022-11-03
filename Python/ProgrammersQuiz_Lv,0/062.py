@@ -1,7 +1,8 @@
 # 2차원으로 만들기
 
 def solution(num_list, n):
-    list = []
+    
+
 
 
 
