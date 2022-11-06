@@ -13,7 +13,7 @@ class Unit(): # 모든 유닛들은 고유한 이름과 능력치를 가짐
         self.skill_name = ''
 
 class User():
-    
+    self.monlist[i].hp -= damage
     def __init__(self):
         self.name = ''
         self.monlist = [] # 각 자리마다 한마리씩 들어감, 최대 6마리 가지고다님, 0 = 아무것도 없는 상태
@@ -101,7 +101,7 @@ class fight():
         print(A.monlist)
         My_mon_name = input("> ")
         if My_mon_name in A.monlist:
-            My_mon = Pokemon(A.monlist_num[A.monlist.index(My_mon_name)])
+            My_mon =  A.monlist.# 새로 선언한거임.
         else:
             print('그런 몬스터는 없습니다')
 
