@@ -1,10 +1,18 @@
-# 최솟값 만들기
+# JadenCase 문자열 만들기
 
-def solution(A,B):
-    
+def solution(s):
+    a=list(s)
+    b=s.lower() 
+    c=list(b) 
+    c[0]=a[0].upper() 
+    for i in range(len(s)-1):
+        if a[i]==' ':
+            c[i+1]=a[i+1].upper()
+    answer=''.join(c)
+    print(answer)
+    return answer
 
 
 
 
-A = [1, 4, 2]
-B = [5, 4, 4]
+solution("3people unFollowed me")
