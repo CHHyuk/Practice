@@ -1,4 +1,4 @@
-# H-Index
+# H-Index XXXXXXXXXXXX
 
 def solution(citations):
     result = 0

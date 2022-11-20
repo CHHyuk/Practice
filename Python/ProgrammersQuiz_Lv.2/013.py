@@ -1,4 +1,4 @@
-# N개의 최소공배수
+# N개의 최소공배수 XXXXXXXXXXXX
 
 def solution(arr):
     result = 1  
