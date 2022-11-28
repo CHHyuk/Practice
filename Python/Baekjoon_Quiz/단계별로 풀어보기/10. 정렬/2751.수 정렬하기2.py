@@ -4,8 +4,3 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 
 n = int(input())
 array = []
-for i in range(n):
-    array.append(int(input()))
-array.sort()
-for j in range(len(array)):
-    print(array[j])

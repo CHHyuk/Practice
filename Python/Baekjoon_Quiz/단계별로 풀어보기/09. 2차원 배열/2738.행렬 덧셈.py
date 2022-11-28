@@ -8,11 +8,11 @@ sum = []
 temp = []
 answer = []
 for i in range(2):
-    for j in range(m):
+    for j in range(n):
         sum.append(list(map(int, input().split())))
 
 for x in range(n):
-    for y in range(n):
+    for y in range(m):
         temp.append(sum[x][y] + sum[x+n][y])
     print(*temp)
     temp = []
