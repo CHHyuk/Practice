@@ -1,8 +1,2 @@
-X = list(input().split())
-A = [1,1,2,2,2,8]
-answer_list = []
-answer = ''
-for i in range(len(X)):
-    answer_list.append(A[i]-int(X[i]))
-    answer = answer + str(answer_list[i]) + ' '
-print(answer)
+list = [i * 10 for i in range(1,30) if i % 3 == 0]
+print(list)
