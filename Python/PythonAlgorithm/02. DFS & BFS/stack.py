@@ -15,3 +15,5 @@ stack.pop() # [5,2,3,1]
 
 print(stack[::-1]) # 최상단 원소부터 출력, [1,3,2,5]
 print(stack) # 최하단 원소부터 출력, [5,2,3,1]
+stack.sort()
+print(stack)
