@@ -13,3 +13,4 @@
 
 n = int(input())
 
+result = 0

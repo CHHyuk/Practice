@@ -8,4 +8,6 @@
 
 a,b,v = map(int,input().split())
 
-count = (v - a) 
+count = ((v - a) // a) + 1
+
+print(count)
