@@ -10,16 +10,13 @@
 단, 아파트에는 0층부터 있고 각층에는 1호부터 있으며, 0층의 i호에는 i명이 산다.
 """
 
-def people_count(k,n):
-    if n == 1:
-        return 1
-    elif k == 1:
-        return sum(range(1,n+1))
-    return people_count(k-1,n) + people_count(k,n-1)
-
 t = int(input())
 
 for _ in range(t):
     k = int(input())
     n = int(input())
-    print(people_count(k,n))
+    f0 = [i for i in range(1, n+1)]
+    for x in range(k): # 층 수 만큼 반복
+        for y in range(1,n): # 1 ~ n-1 까지
+            f0[y] += f0[y-1] # 층별 각 호실의 사람 수를 변경
+    print(f0[-1])

@@ -13,4 +13,22 @@
 
 n = int(input())
 
-result = 0
+count = 0
+
+while n >= 15:
+    n -= 5
+    count += 1
+
+while n >= 0:
+    if n % 3 == 0:
+        print(count + (n // 3))
+        break
+    else:
+        n -= 5
+        count += 1
+    if n == 0:
+        print(count)
+        break
+    if n < 0:
+        print(-1)
+        break    
