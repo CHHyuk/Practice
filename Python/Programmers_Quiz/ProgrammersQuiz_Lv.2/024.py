@@ -1,10 +1,12 @@
 # 프린터 xxxxxxxxxxxxxxxxxx
 
 def solution(priorities, location):
-    x = priorities.index(max(priorities))
+        1
+    
+            
+
+ 
 
 
 
-
-
-solution([2, 1, 3, 2],2)
+solution([1, 1, 9, 1, 1, 1],0)

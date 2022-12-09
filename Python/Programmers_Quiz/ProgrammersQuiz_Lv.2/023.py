@@ -1,20 +1,7 @@
-# n^2 배열 자르기 xxxxxxxxxxxxx
+# n^2 배열 자르기  xxxxxxxxxxxxxxxx
 
 def solution(n, left, right):
-    temp = []
-    for i in range(1,n+1):
-        for j in range(1,n+1):
-            if i >= j:
-                temp.append(i)
-            elif i < j:
-                temp.append(j)
-    
-    temp = temp[left:right+1]
-    return temp
+    1
 
 
-
-
-
-
-solution(3,2,5)
+solution(4,7,14)

@@ -1,18 +1,25 @@
-# N개의 최소공배수 XXXXXXXXXXXX
+# N개의 최소공배수 
+
+import math
 
 def solution(arr):
-    result = 1  
-    check = 0
-    answer = 1
-    for i in range(2,max(arr)):
-        for j in range(len(arr)):
-            if arr[j] % i == 0:
-                check += 1
-                if check == len(arr):
-                    result *= i
-        check = 0
-    answer = result
-    for i in range(len(arr)):
-        arr[i] = int(arr[i] / result)
-        answer *= arr[i]
+    answer = 0
+    n = 1
+
+    while True:
+        answer = max(arr) * n
+        result = True
+        for num in arr:
+            if answer % num != 0:
+                result = False
+                break
+        if result:
+            break
+        n += 1
+
     return answer
+
+solution([2,6,8,14])
+
+    
+    
