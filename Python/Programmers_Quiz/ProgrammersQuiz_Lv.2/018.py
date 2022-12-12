@@ -1,4 +1,4 @@
-# 행렬의 곱셈 XXXXXXXXXXXX
+# 행렬의 곱셈
 import numpy as np
 
 def solution(arr1, arr2):
