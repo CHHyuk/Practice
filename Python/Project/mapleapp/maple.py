@@ -21,6 +21,12 @@ while True:
     print('직업 : ',exp.get_text().split()[1])
     print('레벨(경험치) : ',exp.get_text().split()[0])
     print('인기도 : ',exp.get_text().split()[3])
-    print('길드 : ',ranking.get_text().split()[1])
+    try:
+        print('길드 : ',ranking.get_text().split()[1])
+    except:
+        print('길드 : 없음')
     print('월드랭킹 : ',ranking.get_text().split()[5])
-    print('무릉 층수(기록)',무릉.get_text().split()[0],'층 (',시간.get_text().split()[0],시간.get_text().split()[1],')')
+    try:
+        print('무릉 층수(기록)',무릉.get_text().split()[0],'층 (',시간.get_text().split()[0],시간.get_text().split()[1],')')
+    except:
+        print('무릉 기록 없음')
