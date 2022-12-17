@@ -7,3 +7,5 @@ def solution(num1, num2):
     num3 = num1 % num2
     answer = num3
     return answer
+
+solution(2,5)

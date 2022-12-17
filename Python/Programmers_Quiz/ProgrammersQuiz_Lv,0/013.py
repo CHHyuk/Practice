@@ -7,3 +7,5 @@
 
 def solution(message):
     return len(message) * 2
+
+solution('한혁이는 오늘 밥을 처먹었다')
