@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
+from math import *
+
 window = Tk() # window 에 Tk() 셋
 window.title('윈도우창 이름') # 윈도우 창 이름
 window.geometry("300x500") # 크기 가로 x 세로
@@ -18,5 +20,15 @@ def clickButton():
 
 button1 = Button(window,text = '눌러주세요', fg = 'red', bg = 'yellow', command = clickButton) # 버튼1 변수에 버튼 생성, 커맨드(클릭 시) = clickButton 함수 호출
 button1.pack(expand = 1) # 버튼 1 채워넣기(확장두께 = 1)
+
+def calc(event):
+    label.config(text = '결과=' + str(eval(entry.get())))
+
+entry = Entry(window)
+entry.bind("<return>", calc)
+entry.pack()
+
+label = Label(window)
+label.pack()
 
 window.mainloop()
