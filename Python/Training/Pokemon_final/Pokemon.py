@@ -1,5 +1,4 @@
 
-
 class Unit(): # 모든 유닛들은 고유한 이름과 능력치를 가짐
     
     def __init__(self):
@@ -34,7 +33,7 @@ class Pokemon(Unit): # 포켓몬 정보
         return self.hp - enemy_dmg
 
 
-filepath = 'C:/git/Practice/Python/MyProject/Pokemon_final/Pokemon.txt'
+filepath = 'C:\Users\Administrator\Desktop\12-21\Practice\Python\Training\Pokemon_final\Pokemon.txt'
 with open(filepath,'r',encoding='UTF-8') as f: 
     mon_status = f.readlines()
 

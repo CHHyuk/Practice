@@ -1,4 +1,3 @@
-import Pokemon
 
 class User():
 

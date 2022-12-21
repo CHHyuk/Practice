@@ -1,15 +1,21 @@
-# 더 맵게 xxxxxxxxxxxxxxxxx
+# 더 맵게
 
-def solution(scoville,k):
+import heapq
+
+def solution(scoville, K):
+    answer = 0
     scoville.sort()
-    i = 0
-    while True:
-        if scoville[i] + (scoville[i+1] * 2) < k:
-            scoville[i] = scoville[i] + (scoville[i+1] * 2)
-            scoville.remove(scoville[i+1])
-        elif scoville[i+1] < k:
-            scoville[i+1]
-
+    while scoville[0] < K:
+        if len(scoville) <= 1:
+            return -1
+        else:
+            small = heapq.heappop(scoville)
+            small2 = heapq.heappop(scoville)
+            heapq.heappush(scoville, (small + (small2 * 2)))
+            answer += 1
+    return answer
+        
+    
 
 
 
